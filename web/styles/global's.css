@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 2, 6, 23; /* Deep Slate 950 */
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
+    rgb(var(--background-start-rgb));
+  font-family: 'Inter', sans-serif;
+}
+
+.high-enterprise-card {
+  @apply bg-slate-900 border border-slate-800 p-6 rounded-xl hover:border-blue-500 transition-all duration-300;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn-sovereign {
+  @apply bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full transition-transform active:scale-95;
+}
