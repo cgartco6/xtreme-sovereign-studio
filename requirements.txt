@@ -1,0 +1,13 @@
+openai>=1.0.0
+flask
+flask-cors
+python-dotenv
+requests
+stripe
+reportlab
+python-docx
+sqlalchemy
+pytz
+apscheduler
+cryptography
+supabase
