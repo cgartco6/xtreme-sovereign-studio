@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # The AI Studio Engine (Python Backend)
+  backend:
+    build: .
+    env_file: .env
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    restart: always
+
+  # The High-Enterprise Storefront (Next.js)
+  frontend:
+    build: ./web
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+
+  # Persistence Layer
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=sovereign_admin
+      - POSTGRES_PASSWORD=xtreme_secure_pass
+      - POSTGRES_DB=sovereign_studio
+      
